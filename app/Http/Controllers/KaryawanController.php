@@ -27,6 +27,9 @@ class KaryawanController extends Controller
         
     }
 
+    public function cek_hash(request $request){
+        echo Hash::make($request->id);
+    }
     public function index_admin(request $request){
         
         if(Auth::user()['role_id']==1 || Auth::user()['role_id']==2){

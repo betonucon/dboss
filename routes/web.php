@@ -20,6 +20,7 @@ use App\Http\Controllers\CovidController;
 
 Route::get('a/{personnel_no}/', 'Auth\LoginController@programaticallyEmployeeLogin')->name('login.a');
 Auth::routes();
+Route::get('Hash',[KaryawanController::class, 'cek_hash']);
 Route::group(['middleware'    => 'auth'],function(){
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/', 'HomeController@index')->name('home');
@@ -33,6 +34,7 @@ Route::group(['middleware'    => 'auth'],function(){
 
 Route::group(['middleware'    => 'auth'],function(){
     Route::get('Karyawan',[KaryawanController::class, 'index']);
+    
     Route::get('VerifikasiKaryawan',[KaryawanController::class, 'index']);
     Route::get('ListKaryawan',[KaryawanController::class, 'index_admin']);
     Route::get('Karyawan/ubah',[KaryawanController::class, 'ubah']);
