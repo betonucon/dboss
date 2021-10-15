@@ -11,10 +11,10 @@ function barcode($id,$wid){
    return $code;
 }
 function name(){
-    return 'PROREP (Progres Report)';
+    return 'DB Outsourcing';
 }
 function company(){
-    return 'PT KRAKATAU INFROMATION TECHNOLOGY';
+    return 'PT KRAKATAU STEEL';
 }
 
 function parsing_validator($url){
