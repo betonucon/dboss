@@ -346,14 +346,14 @@
                 },
                 series: [{
                     data: [
-                        @foreach(get_karyawan(Auth::user()->username) as $get)
+                        @foreach(get_karyawan_absesnsi() as $get)
                             {{count_absensi($get->nik_ktp,$tgl)}},
                         @endforeach
                     ]
                     }],
                 xaxis: {
                     categories: [
-                        @foreach(get_karyawan(Auth::user()->username) as $no=>$get)
+                        @foreach(get_karyawan_absesnsi() as $no=>$get)
                             '{{$no+1}}.{{$get->name}}',
                         @endforeach
                     ],
@@ -368,7 +368,7 @@
                     axisTicks: {
                         show: true,
                         borderType: 'solid',
-                        color: COLOR_SILVER,
+                        color: "blue",
                         height: 6,
                         offsetX: 0,
                         offsetY: 0

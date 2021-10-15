@@ -148,6 +148,16 @@ function get_karyawan($lifnr){
    return $data;
 
 }
+function get_karyawan_absesnsi(){
+   if(Auth::user()['role_id']==4){
+      $data=App\Karyawan::where('LIFNR',Auth::user()['username'])->orderBy('name','Asc')->get();
+   }else{
+      $data=App\Karyawan::orderBy('name','Asc')->get();
+   }
+   
+   return $data;
+
+}
 
 function count_absensi($nik_ktp,$tgl){
    $data=App\Absensi::where('nik_ktp',$nik_ktp)->where('tanggal',$tgl)->count();
