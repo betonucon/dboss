@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>PT KRAKATAU STEEL | DBOSS</title>
+	<title>PT KRAKATAU STEEL | DB-OS</title>
 	<link rel="icon" href="https://sso.krakatausteel.com/public/fav.png">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />

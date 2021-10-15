@@ -53,6 +53,10 @@
                 <div class="panel panel-inverse" data-sortable-id="chart-js-1">
                     
                     <div class="panel-body">
+                        <div class="btn-group" style="margin-bottom:2%">
+                            <input type="text" id="tanggal" value="{{$tgl}}">
+                            <button class="btn btn-blue btn-sm active" onclick="cari_data()"><i class="fa fa-search"></i> Cari</button>
+                        </div>
                          <div id="apex-bar-chart"></div>
                     </div>
                 </div>
@@ -66,6 +70,20 @@
 @endsection
 @push('ajax')
     <script src="{{url('assets/assets/plugins/apexcharts/dist/apexcharts.min.js')}}"></script>
+    <script>
+         $(document).ready(function() {
+            $('#tanggal').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                
+            });
+        });
+
+        function cari_data(){
+            var tanggal=$('#tanggal').val();
+            location.assign("{{url('/')}}?tanggal="+tanggal);
+        }
+    </script>
     <script>
         var handleLineChart = function() {
             "use strict";
@@ -300,7 +318,7 @@
             
             var options = {
                 chart: {
-                    height: 120,
+                    height: 130,
                     type: 'bar',
                 },
                 plotOptions: {
@@ -316,7 +334,8 @@
                     offsetX: -6,
                     style: {
                         fontSize: '12px',
-                        colors: [COLOR_WHITE]
+                        fontWeight: 'bold',
+                        colors: ["#000"]
                     }
                 },
                 colors: [COLOR_ORANGE, COLOR_DARK],
@@ -328,14 +347,14 @@
                 series: [{
                     data: [
                         @foreach(get_karyawan(Auth::user()->username) as $get)
-                            10,
+                            {{count_absensi($get->nik_ktp,$tgl)}},
                         @endforeach
                     ]
                     }],
                 xaxis: {
                     categories: [
-                        @foreach(get_karyawan(Auth::user()->username) as $get)
-                            '{{$get->name}}',
+                        @foreach(get_karyawan(Auth::user()->username) as $no=>$get)
+                            '{{$no+1}}.{{$get->name}}',
                         @endforeach
                     ],
                     axisBorder: {

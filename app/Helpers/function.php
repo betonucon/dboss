@@ -149,6 +149,12 @@ function get_karyawan($lifnr){
 
 }
 
+function count_absensi($nik_ktp,$tgl){
+   $data=App\Absensi::where('nik_ktp',$nik_ktp)->where('tanggal',$tgl)->count();
+   return $data;
+
+}
+
 function app_get_karyawan(){
    $data=App\Karyawan::where('sts',1)->count();
    if($data>0){

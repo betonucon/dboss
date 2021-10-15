@@ -24,8 +24,12 @@ class HomeController extends Controller
     public function index(request $request){
        
             $menu='Dashboard';
-            $cost=Auth::user()['costcenter_id'];
-            return view('welcome',compact('menu','cost'));
+            if($request->tanggal==''){
+                $tgl=date('Y-m-d');
+            }else{
+                $tgl=$request->tanggal;
+            }
+            return view('welcome',compact('menu','tgl'));
         
     }
 }
