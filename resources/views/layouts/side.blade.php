@@ -41,10 +41,10 @@
 								<a href="javascript:;">
 									<b class="caret"></b>
 									<i class="fa fa-users"></i>
-									<span>Karyawan OSS {{app_get_karyawan()}}</span>
+									<span>Karyawan OSS {!!app_get_karyawan()!!}</span>
 								</a>
 								<ul class="sub-menu">
-									<li><a href="{{url('/VerifikasiKaryawan')}}">Proses Verifikasi {{app_get_karyawan()}}</a></li>
+									<li><a href="{{url('/VerifikasiKaryawan')}}">Proses Verifikasi {!!app_get_karyawan()!!}</a></li>
 									<li><a href="{{url('/ListKaryawan')}}">Terverifikasi</a></li>
 									
 								</ul>
