@@ -336,18 +336,22 @@
             TableManageFixedHeader.init();
             $('#datepicker').datepicker({
                 format: 'yyyy-mm-dd',
+                autoclose: true,
                 
             });
             $('#datepicker2').datepicker({
                 format: 'yyyy-mm-dd',
+                autoclose: true,
                 
             });
             $('#datepicker3').datepicker({
                 format: 'yyyy-mm-dd',
+                autoclose: true,
                 
             });
             $('#datepicker4').datepicker({
                 format: 'yyyy-mm-dd',
+                autoclose: true,
                 
             });
         });

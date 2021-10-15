@@ -368,10 +368,12 @@ class KaryawanController extends Controller
                     
                     $("#datepicker5").datepicker({
                         format: "yyyy-mm-dd",
+                        autoclose: true,
                         
                     });
                     $("#datepicker6").datepicker({
                         format: "yyyy-mm-dd",
+                        autoclose: true,
                         
                     });
                 });
