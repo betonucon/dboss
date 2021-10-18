@@ -10,7 +10,7 @@
             <!-- end register-header -->
             <!-- begin register-content -->
             <div class="register-content">
-                <form action="{{ route('login') }}" method="post" class="margin-bottom-0">
+                <form action="{{ url('api\login') }}" method="post" class="margin-bottom-0">
                     @csrf
                     <label class="control-label">Email <span class="text-danger">*</span></label>
                     <div class="row m-b-15">

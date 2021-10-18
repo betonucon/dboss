@@ -6,6 +6,7 @@ use App\Http\Controllers\VendorController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\VaksinController;
 use App\Http\Controllers\CovidController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

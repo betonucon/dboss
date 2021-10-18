@@ -27,20 +27,9 @@ class AbsController extends Controller
         
     }
 
-    public function reset(request $request){
-        error_reporting(0);
-        $jumlah=count($request->nik_ktp);
-        if($jumlah>0){
-            for($x=0;$x<$jumlah;$x++){
-                $cekvaksin=Covid::where('nik_ktp',$request->nik_ktp)->delete();
-            }
-            echo'ok';
-        }else{
-            echo'-&nbsp; Pilih Data yang akan direset ';
-        }
-    }
+    
 
-    public function save(request $request){
+    public function proses_absen(request $request){
         error_reporting(0);
         
         $rules = [
@@ -69,22 +58,7 @@ class AbsController extends Controller
                 }
             }
         }else{
-            $cek=Karyawan::where('nik_ktp',$request->nik_ktp)->where('LIFNR',Auth::user()['username'])->count();
-            if($cek>0){
-                
-                $data=Covid::create([
-                    'nik_ktp'=>$request->nik_ktp,
-                    'tgl_mulai'=>$request->tgl_mulai,
-                    'tgl_selesai'=>$request->tgl_sampai,
-                    'tgl_create'=>date('Y-m-d'),
-                    'LIFNR'=>Auth::user()['username'],
-                ]);
-
-                echo'ok';
-              
-            }else{
-                echo'-&nbsp; Nomor KTP Tidak Tersedia ';
-            }
+            
         }
     }
 }
